@@ -11,16 +11,21 @@
 :root {
     --primary-font-family: "Inter", sans-serif;
     --primary-bg-color: #01778fb7;
-    --primary-text-color: #ebfbff;
+    --primary-text-color: #ffffff;
 }
 
-
+.dark-theme{
+    --primary-font-family: "Inter", sans-serif;
+    --primary-bg-color: #97eeffe2;
+    --primary-text-color: #06222a;
+}
 
 body {
     height: 100%;
     font-family: var(--primary-font-family);
     background-color: var(--primary-bg-color);
     font-optical-sizing: auto;
+    transition: all 3s;
 }
 
 a {
@@ -31,7 +36,7 @@ a {
 .cover-image {
     width: 100%;
     height: 100vh;
-    background-image: url('./image/bali.jpg');
+    background-image: url('./image/bali.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,6 +47,7 @@ a {
     top: 0;
     z-index: 1000;
     background-color: var(--primary-bg-color);
+    transition: all 3s;
 }
 #site-header {
 
@@ -74,7 +80,7 @@ a {
     font-weight: 500;
 }
  :hover {
-    color: #aeebfb;
+    color: #2f8398;
 }
 
 #site-header .site-title {
@@ -103,20 +109,118 @@ a {
     margin-top: 8.79rem;
     text-align: center;
 }
- .slide {
-    background-color: red;
-    overflow: hidden;
+  h1 {
     display: block;
-    font-size: 7.8vw;
+    font-size: 9.8vw;
     font-weight: 700;
     color: var(--primary-text-color);
     letter-spacing: -1px;
     line-height: 0.8;
 }
-.slide1{
-    transform: translateY(120px);
+.slide{
+    width: 60vw;
+    max-width: 60vw;
+    margin: 2px;
+    background-color: transparent;
+    overflow: hidden;
+
 }
+
 .slide2 {
     font-weight: 300;
     font-style:italic;
 }
+
+#image-section .cover{
+    position : relative;
+    height: 130vh;
+}
+
+#image-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    clip-path: circle(25% at 50% 50%);
+}
+
+#tag-section{
+  display: flex;
+  margin-top: 5rem;
+}
+#tag-section .container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    width: 100rem;
+}
+
+span{
+    font-size: clamp(1.5rem, 2.2vw, 4rem);
+    height: 200;
+    letter-spacing: -1px;
+    color: var(--primary-text-color);
+    padding: 1rem 4rem;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 40vw;
+}
+
+#hotel-section{
+    height: 130vh;
+    position: relative;
+    margin: 0 2rem;
+
+}
+#hotel-section .hotel-title{
+   bottom: 0;
+   font-size: 14vw;
+   font-weight: 700;
+   letter-spacing: -5px;
+   color: var(--primary-text-color);
+   margin-bottom: 1rem;
+}
+#hotel-section .grid-wrapper{
+    width: 100%;
+    height: 100%;
+}
+.grid-items{
+    display: flex ;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2vw;
+}
+img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+  *{
+    flex: 4;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* For each images at the last showing A Fluid motion */
+ .grid-items :nth-child(1){
+    aspect-ratio: 1/1.4;
+    flex-basis: 120px;
+    transform: translateY(40%);
+ }
+ .grid-items :nth-child(2){
+    aspect-ratio: 1/1.2;
+    flex-basis: 100px;
+    transform: translateY(40%);
+ }
+ .grid-items :nth-child(3){
+    aspect-ratio: 1/1.1;
+    transform: translateY(-120%);
+ }
+ .grid-items :nth-child(4){
+    aspect-ratio: 1/1.2;
+    flex-basis: 180px;
+    transform: translateY(50%);
+ }
